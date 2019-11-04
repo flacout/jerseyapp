@@ -1,8 +1,6 @@
 package org.fabrice.webapp;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 
@@ -27,5 +25,16 @@ public class StudentController {
     public Student getStudent() {
         Student st = new Student("fabrice", "Diaz",22,1);
         return st;
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Student createStudent(Student st) {
+        System.out.println(st);
+        String name = st.getFirstName();
+        System.out.println(name);
+        return st;
+
     }
 }
