@@ -6,6 +6,8 @@ public class Student {
     private String firstName;
     private String lastName;
     private int age;
+    private String[] address = {"connard","connasse"};
+    private Grade grade = new Grade(10, 13);
 
     // Must have no-argument constructor
     public Student() {
@@ -17,6 +19,22 @@ public class Student {
         this.lastName = lname;
         this.age = age;
         this.id = id;
+    }
+
+    public Grade getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Grade grade) {
+        this.grade = grade;
+    }
+
+    public void setAddress(String[] address){
+        this.address = address;
+    }
+
+    public String[] getAddress() {
+        return address;
     }
 
     public void setFirstName(String fname) {
